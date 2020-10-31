@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tf-js</title>
+</head>
+<body>
+    <h1>一個自動辨識驗證碼的 model</h1>
+    <h2>Bookmark</h2>
+    <p>新增一個 bookmark</p>
+    <p>將下方 link 中的所有字做為 bookmark 的 URL</p>
+    <a href="./bookmark/bookmark.txt">link</a>
+    <p>在所要網頁中點開</p>
+
+    <h2>Demo</h2>
+    <div style="float:left">驗證碼：
+        <input type="text" name="validateCode" id="validateCode" maxlength="4" autocomplete="Off" style="width:50px;vertical-align: middle;" title="驗證碼" class="validate[required,length[4]]">
+        <img id="validatePic" style="width:66px;height:22px;vertical-align: middle;" src="data:image/png;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAAWAEIDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDu/B3g7wvdeB9AuLjw3o8s0um27ySSWMTM7GNSSSVyST3rOjvvhRcw3MkOl6IVt4/MkP8AY/3VLKgP+r5+ZlHHrXV+CBn4f+G/+wXa/wDopa87jhvVXxBqFxGl34fsfEM815p8YPmXHIyzdiqfI+08HDbiMCs4JO9y4RT3L6R/D25sG1GPSdGa1E3keYNLUDfjOMbM9OelTPpvgWOe1gbRdIEl0qPCv9nL8wY4X+DjPvW741itW8BTSWfk/Z1jh8kw42eXvXbtxxjGMYrO1CeKXxV4f8uVHys7jawPylOD9Dg4PtXRClFxTd/tfgr9i1Zkcug+DbeYxyaDo6uuMj+z0Pv/AHa0IfDXg2awe7Tw5opjRSWP9nx8YGTxtzS3Eksesgww+c32fBXeF43deas6Yk1vPPcSosZnYZjXnAGe/rzXHGbuYuUm2l+RhHTPAx66Jo34aag/9kq9H4R8KyxpInhzRyjgMp+wx8g/8Bpukx3stpaxsIzYOsgcKfmIORz+PpW7HGsUaRoMIgCqPQCoUmxYec6keaW3pb9XofIXiuGK28Y65BBEkUMeoTokaKFVVEjAAAdAB2oqTxj/AMjxr/8A2Erj/wBGNRXUths9w8NfH3wro3hXSNLuNP1lp7Kyht5GjhiKlkQKSMyA4yPQVn6Z8UfhTo0s8th4a1qJ54Wgk3qsivGxBKlXmIIOB2oopjTa2J9J+Mnw90TTpdP0/QtZjtJmLyRNGkgYkBTndKeCABjpVW1+LfgDS5mk0zRdXgZ12sWjRjj2JlOP/rCiilzSs1fRjTdxZvjJ4NuJWll0vV2dup8tB/7Uq8Pjl4PeJ0n0/WmDqVIEMWMHr/y1oorNRQpJWa7laD4zeCLR/MtdK1mOQgqT5aHI49ZfarH/AAvfwv8A8+Gsf9+Yv/jlFFTyqxNBKMLI8K1+/i1XxHqmowK6w3d3LOiuAGCs5YA4zzg0UUVuhn//2Q==">
+        <span class="txt_orange" style="font-size:0.8em"></span>
+    </div>
+
+    <script src="./index.js" defer ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+</body>
+</html>
+
