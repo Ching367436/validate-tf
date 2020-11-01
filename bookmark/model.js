@@ -1,7 +1,7 @@
 (async () => {
     const width = 16, height = 20, step = 13;
 
-    const model = await tf.loadLayersModel(`https://github.com/Ching367436/validate-tf/model-js/model.json`)
+    const model = await tf.loadLayersModel(`https://Ching367436.github.io/validate-tf/model-js/model.json`)
 
     const validateCode = document.getElementById("validateCode");
 
