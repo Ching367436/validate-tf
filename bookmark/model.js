@@ -7,6 +7,10 @@
 
     const validatePic = document.getElementById("validatePic");
 
+    validateCode.style.background = "linear-gradient(-37deg, #f8226c, #36b4ff)";
+    validateCode.style.color = "#fff";
+
+
     function int_to_ch(n) {
         n = Number(n)
 
@@ -38,7 +42,8 @@
         document.body.removeChild(c);
     }
 
+    validatePic.addEventListener("load", main);
+
     main();
 
-    validatePic.addEventListener("load", main);
 })();
