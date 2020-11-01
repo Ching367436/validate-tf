@@ -33,7 +33,7 @@
         let res = "";
         for (let i = 0; i < 4; i++) {
             ctx.drawImage(validatePic, -5 - step * i, -1)
-            data = tf.argMax(model.predict(tf.browser.fromPixels(c).expandDims(0)), 1).dataSync();
+            let data = tf.argMax(model.predict(tf.browser.fromPixels(c).expandDims(0)), 1).dataSync();
             data = int_to_ch(data)
             res += data;
         }
