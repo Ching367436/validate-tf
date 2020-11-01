@@ -7,5 +7,5 @@
     }
 
     appendScript("https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.7.0/dist/tf.min.js")
-    appendScript("https://Ching367463.github.io/validate-tf/bookmark/model.js");
+    appendScript("https://Ching367436.github.io/validate-tf/bookmark/model.js");
 })();
