@@ -20,20 +20,37 @@
     }
 
     function predict() {
-        const c = document.createElement("canvas");
+        const threshold = 0.9;
+
+        const c = document.createElement("canvas")
         c.height = height;
         c.width = width;
         c.style.display = "none";
         document.body.appendChild(c);
 
-        const ctx = c.getContext("2d");
+        const ctx = c.getContext("2d")
 
         // crop image
         let res = "";
         for (let i = 0; i < 4; i++) {
-            ctx.drawImage(validatePic, -5 - step * i, -1);
-            let data = tf.argMax(model.predict(tf.browser.fromPixels(c).expandDims(0)), 1).dataSync();
-            data = int_to_ch(data);
+            ctx.drawImage(validatePic, -5 - step * i, -1)
+
+            let img = tf.browser.fromPixels(c).expandDims(0);
+
+            // normalize
+            img = tf.div(img, 255);
+
+
+            let pred = model.predict(img);
+            const argMax = tf.argMax(pred, 1);
+            const probabilities = tf.softmax(pred);
+            const confidence = probabilities.max().dataSync();
+
+            if (confidence < threshold)
+                return "";
+
+            let data = argMax.dataSync();
+            data = int_to_ch(data)
             res += data;
         }
 
@@ -44,9 +61,14 @@
 
     function main() {
 
-        validateCode.value = predict();
+        pred = predict()
+        if (pred)
+            validateCode.value = pred;
+        else
+            validatePic.click();
 
     }
+
 
     validatePic.addEventListener("load", main);
 

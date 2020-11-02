@@ -20,6 +20,8 @@
     }
 
     function predict() {
+        const threshold = 0.9;
+
         const c = document.createElement("canvas")
         c.height = height;
         c.width = width;
@@ -32,7 +34,22 @@
         let res = "";
         for (let i = 0; i < 4; i++) {
             ctx.drawImage(validatePic, -5 - step * i, -1)
-            let data = tf.argMax(model.predict(tf.browser.fromPixels(c).expandDims(0)), 1).dataSync();
+
+            let img = tf.browser.fromPixels(c).expandDims(0);
+
+            // normalize
+            img = tf.div(img, 255);
+
+
+            let pred = model.predict(img);
+            const argMax = tf.argMax(pred, 1);
+            const probabilities = tf.softmax(pred);
+            const confidence = probabilities.max().dataSync();
+
+            if (confidence < threshold)
+                return "";
+
+            let data = argMax.dataSync();
             data = int_to_ch(data)
             res += data;
         }
@@ -44,7 +61,11 @@
 
     function main() {
 
-        validateCode.value = predict();
+        pred = predict()
+        if (pred)
+            validateCode.value = pred;
+        else
+            validatePic.click();
 
     }
 
