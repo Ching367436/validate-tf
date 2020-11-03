@@ -1,6 +1,8 @@
 (() => {
+        if (document.querySelectorAll("#validateCode").length === 0)
+            return false;
         if (typeof window.Ching367436_validate !== 'undefined')
-             return false;
+            return false;
         window.Ching367436_validate = true;
 
         const tfjs = document.createElement("script");
