@@ -1,4 +1,8 @@
 (() => {
+        if (typeof window.Ching367436_validate !== 'undefined')
+             return false;
+        window.Ching367436_validate = true;
+
         const tfjs = document.createElement("script");
         tfjs.src = "https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js";
         tfjs.setAttribute("async", "");
