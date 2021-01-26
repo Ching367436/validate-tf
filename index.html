@@ -31,7 +31,7 @@
     <div>
         <input id="bookmark" class="all" value='javascript:(()=>{function%20appendScript(src){const%20s=document.createElement("script");s.src=src;s.defer=true;document.head.appendChild(s);}appendScript("https://Ching367436.github.io/validate-tf/bookmark/index.js");})();'
             readonly>
-        <button class="copy" onclick="navigator.clipboard.writeText(document.getElementById('bookmark').value)">copy</button>
+        <button id="copy">copy</button>
     </div>
     <p>在所要網頁中點開此 Bookmark </p>
 
@@ -48,6 +48,7 @@
 
     <script src="./validatePic.js" defer></script>
     <script src="./index.js" defer></script>
+    <script src="./copy.js" defer></script>
 </body>
 
 </html>
