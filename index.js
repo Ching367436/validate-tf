@@ -5,5 +5,5 @@
         s.defer = true;
         document.head.appendChild(s);
     }
-    appendScript("validate-tf/bookmark/index.js");
+    appendScript("bookmark/index.js");
 })();
